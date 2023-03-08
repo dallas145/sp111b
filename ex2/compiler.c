@@ -89,7 +89,7 @@ void WHILE() {
   emit("(L%d)\n", whileEnd);
 }
 
-//DO WHILE = do STMT while (E)
+//DO_WHILE = do STMT while (E)
 void DO_WHILE() {
   int doBegin = nextLabel();
   int doEnd = nextLabel();
