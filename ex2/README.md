@@ -1,5 +1,7 @@
 # 習題2
-修改自[cpu2os/02-軟體/02-編譯器/01-diy/03a-compiler/compiler.c](https://github.com/ccc111b/cpu2os/blob/master/02-%E8%BB%9F%E9%AB%94/02-%E7%B7%A8%E8%AD%AF%E5%99%A8/01-diy/03a-compiler/compiler.c)
+修改自[cpu2os/02-軟體/02-編譯器/01-diy/03a-compiler/compiler.c](https://github.com/ccc111b/cpu2os/blob/master/02-%E8%BB%9F%E9%AB%94/02-%E7%B7%A8%E8%AD%AF%E5%99%A8/01-diy/03a-compiler/compiler.c)  
+--------  
+
 測試檔案: `dowhile.c`
 ```
 i = 1;
