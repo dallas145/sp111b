@@ -30,9 +30,9 @@
 [2]:https://lotabout.me/2015/write-a-C-interpreter-1/
 [3]:https://lotabout.me/2015/write-a-C-interpreter-2/
 [4]:https://lotabout.me/2015/write-a-C-interpreter-3/
-[5]:https://lotabout.me/2015/write-a-C-interpreter-4/
-[6]:https://lotabout.me/2015/write-a-C-interpreter-5/
-[7]:https://lotabout.me/2015/write-a-C-interpreter-6/
-[8]:https://lotabout.me/2015/write-a-C-interpreter-7/
-[9]:https://lotabout.me/2015/write-a-C-interpreter-8/
-[10]:https://lotabout.me/2015/write-a-C-interpreter-9/
+[5]:https://lotabout.me/2016/write-a-C-interpreter-4/
+[6]:https://lotabout.me/2016/write-a-C-interpreter-5/
+[7]:https://lotabout.me/2016/write-a-C-interpreter-6/
+[8]:https://lotabout.me/2016/write-a-C-interpreter-7/
+[9]:https://lotabout.me/2016/write-a-C-interpreter-8/
+[10]:https://lotabout.me/2016/write-a-C-interpreter-9/
