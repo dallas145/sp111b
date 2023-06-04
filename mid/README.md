@@ -2,8 +2,9 @@
 
 ### 本程式非原創
 
-這份報告全部程式碼皆參考自[手把手教你構建C語言編譯器][1]
+這份報告全部程式碼皆參考自[手把手教你構建C語言編譯器][1]  
 
+[Github 頁面][githubpage]
 
 ## 研究目標
 想藉由跟著文章教學，一步一步寫出C語言編譯器的方式來進一步了解C語言。
@@ -36,3 +37,4 @@
 [8]:https://lotabout.me/2016/write-a-C-interpreter-7/
 [9]:https://lotabout.me/2016/write-a-C-interpreter-8/
 [10]:https://lotabout.me/2016/write-a-C-interpreter-9/
+[githubpage]:https://github.com/lotabout/write-a-C-interpreter/tree/master
