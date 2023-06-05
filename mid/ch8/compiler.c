@@ -18,13 +18,14 @@ int *current_id,              //current parsed ID
 int *idmain;                  //the main function
 
 //instructions
-enum { LEA ,IMM ,JMP ,CALL,JZ  , JNZ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,
-       OR  ,XOR ,AND ,EQ  ,NE  , LT ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,
+enum { LEA ,IMM ,JMP ,CALL,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,
+       OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,
        OPEN,READ,CLOS,PRTF,MALC,MSET,MCMP,EXIT };
 
 //tokens and classes (operators last and in precedence order)
 enum {
-  Num = 128, Fun, Sys, Glo, Loc, Id, Char, Else, Enum, If, Int, Return, Sizeof, While,
+  Num = 128, Fun, Sys, Glo, Loc, Id,
+  Char, Else, Enum, If, Int, Return, Sizeof, While,
   Assign, Cond, Lor, Lan, Or, Xor, And, Eq, Ne, Lt, Gt, Le, Ge, Shl, Shr, Add, Sub, Mul, Div, Mod, Inc, Dec, Brak
 };
 
@@ -58,7 +59,7 @@ void next() {
       }
     }
 
-    else if ((token >= 'a' && token <= 'z') || (token >= 'A' && token <= 'Z') || (token == '-')) {
+    else if ((token >= 'a' && token <= 'z') || (token >= 'A' && token <= 'Z') || (token == '_')) {
       //parse identifier
       last_pos = src - 1;
       hash = token;
@@ -140,7 +141,7 @@ void next() {
       }
       return;
     }
-    else if (token =='/') {
+    else if (token == '/') {
       if (*src == '/') {
         //skip comment
         while (*src != 0 && *src != '\n') {
@@ -279,7 +280,7 @@ void match(int tk) {
     next();
   }
   else {
-    printf("%d: expected token: %d", line, tk);
+    printf("%d: expected token: %c %c\n", line, tk, token);
     exit(-1);
   }
 }
@@ -300,7 +301,7 @@ void expression(int level) {
       *++text = token_val;
       expr_type = INT;
     }
-    else if (token =='"') {
+    else if (token == '"') {
       *++text = IMM;
       *++text = token_val;
 
@@ -499,7 +500,7 @@ void expression(int level) {
       *++text = (expr_type == CHAR) ? SC : SI;
     }
     else {
-      printf("%d: bad expression\n", line);
+      printf("%d: bad expression : %c\n", line, token);
       exit(-1);
     }
   }
@@ -518,7 +519,7 @@ void expression(int level) {
         }
         expression(Assign);
         expr_type = tmp;
-        *++text = (expr_type ==CHAR) ? SC : SI;
+        *++text = (expr_type == CHAR) ? SC : SI;
       }
       else if (token == Cond) {
         match(Cond);
@@ -784,7 +785,7 @@ void statement() {
   }
   else if (token == '{') {
     match('{');
-    while (token != '{') {
+    while (token != '}') {
       statement();
     }
     match('}');
@@ -885,7 +886,7 @@ void function_body() {
         match(',');
       }
     }
-    match(',');
+    match(';');
   }
   *++text = ENT;
   *++text = pos_local - index_of_bp;
@@ -907,7 +908,7 @@ void function_declaration() {
   while (current_id[Token]) {
     if (current_id[Class] == Loc) {
       current_id[Class] = current_id[BClass];
-      current_id[Type] = current_id[BType];
+      current_id[Type]  = current_id[BType];
       current_id[Value] = current_id[BValue];
     }
     current_id = current_id + IdSize;
