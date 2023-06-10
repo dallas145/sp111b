@@ -77,7 +77,7 @@ exit(0)
 ```
 
 螢幕截圖：
-![](https://github.com/dallas145/sp111b/blob/main/mid/screenshot/20230605final.png?raw=true)
+![](https://github.com/dallas145/sp111b/blob/main/final/screenshot/20230605final.png?raw=true)
 
 -----
 [1]:https://lotabout.me/2015/write-a-C-interpreter-0/

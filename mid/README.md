@@ -27,7 +27,7 @@ for(i = 0; i < 10; i = i + 1) {
 
 ## 執行結果
 ```
- ./compiler.exe for.c
+> ./compiler.exe for.c
 j = 0;
 for(i = 0; i < 10;i = i + 1) {
   j = j + 1;
